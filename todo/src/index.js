@@ -3,9 +3,10 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
 import App from "./App";
+import todos from "../src/reducers/todoReducers";
 
 const reducers = combineReducers({
-  todos: () => []
+  todos
 });
 
 const store = createStore(
