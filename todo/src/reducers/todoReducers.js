@@ -2,7 +2,7 @@ import { ADD_TODO, TOGGLE_COMPLETE, DELETE_TODO } from "../actions/types";
 import { saveState, loadState } from "../db/localStorage";
 const initialState = loadState();
 
-export default (state = [], action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
       saveState([...state, action.payload]);
