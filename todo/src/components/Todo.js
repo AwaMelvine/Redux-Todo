@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { toggleComplete } from "../actions/todoActions";
+import { toggleComplete, deleteTodo } from "../actions/todoActions";
 const completed = {
   textDecoration: "line-through"
+};
+
+const del = {
+  color: "red",
+  marginLeft: 20,
+  cursor: "pointer"
 };
 
 class Todo extends Component {
@@ -14,6 +20,9 @@ class Todo extends Component {
         style={todo.completed ? completed : {}}
       >
         {todo.value}
+        <span style={del} onClick={() => this.props.deleteTodo(todo.id)}>
+          x
+        </span>
       </li>
     );
   }
@@ -21,5 +30,5 @@ class Todo extends Component {
 
 export default connect(
   null,
-  { toggleComplete }
+  { toggleComplete, deleteTodo }
 )(Todo);
