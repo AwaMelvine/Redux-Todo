@@ -10,7 +10,7 @@ export const addTodo = value => ({
   }
 });
 
-export const toggleTodo = id => ({
+export const toggleComplete = id => ({
   type: TOGGLE_COMPLETE,
   payload: id
 });
