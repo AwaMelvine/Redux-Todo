@@ -7,7 +7,7 @@ class TodoList extends Component {
     return (
       <ul className="todo-list">
         {todos.map(todo => (
-          <Todo />
+          <Todo todo={todo} />
         ))}
       </ul>
     );
